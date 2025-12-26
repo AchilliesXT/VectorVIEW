@@ -101,7 +101,7 @@ function calculateR(pType, angle) {
         return scale * Math.abs(Math.cos(angle - Math.PI / 2));
     }
     else if (pType === 'spiral') {
-        return scale * angle;
+        return scale * (angle - Math.PI / 2);
     }
     
     return scale;
@@ -113,3 +113,4 @@ if (slider) {
     drawGraph();
 
 }
+
