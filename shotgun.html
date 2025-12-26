@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotgun | Vector View</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .breadcrumb { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+        .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .panel { background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        input[type=range] { width: 100%; margin-top: 20px; accent-color: #19D3B3; }
+        @media (max-width: 800px) { .split-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="brand-name">Vector<span class="text-dark">View</span></span></a></div>
+            <nav class="nav-links"><a href="curves.html">Back to Library</a></nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 40px;">
+        <div class="breadcrumb"><a href="curves.html">Curves</a> / Shotgun</div>
+        <h1>Shotgun (Lobar) Pattern</h1>
+        <p class="subtitle" style="margin-bottom: 40px;">Highly directional "tube" microphones used in film sets.</p>
+
+        <div class="split-layout">
+            <div class="panel">
+                <h3>Boom Mic</h3>
+                <div style="font-size: 60px; margin: 20px 0;">🔫</div>
+                <p>Designed to capture dialogue from a distance while ignoring everything else on set.</p>
+            </div>
+            <div class="panel">
+                <canvas id="lessonCanvas" width="340" height="340"></canvas>
+                <input type="range" id="angleSlider" min="0" max="360" value="0">
+                <p id="readout" style="color: #19D3B3; font-weight:bold; margin-top:10px;">Signal: 100%</p>
+            </div>
+        </div>
+    </div>
+
+    <script>const patternType = 'shotgun';</script>
+    <script src="lesson.js"></script>
+</body>
+</html>
