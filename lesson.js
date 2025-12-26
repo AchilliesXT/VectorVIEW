@@ -113,8 +113,10 @@ function calculateR(pType, angle) {
         return scale * Math.abs(0.37 + 0.63 * Math.cos(angle - Math.PI / 2));
     }
     else if (pType === 'shotgun') {
-        let r = 0.25 + 0.75 * Math.cos(angle);
-        return scale * Math.max(r, 0);
+        let c = Math.cos(angle - Math.PI / 2);
+        if (c < 0) c = 0;
+        let cardioid = 0.5 * (1 + Math.cos(angle - Math.PI / 2));
+        return scale * cardioid * Math.pow(c, 4);
     }
     return scale;
 }
@@ -125,6 +127,7 @@ if (slider) {
     drawGraph();
 
 }
+
 
 
 
