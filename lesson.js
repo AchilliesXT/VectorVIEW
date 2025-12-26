@@ -108,7 +108,7 @@ function calculateR(pType, angle) {
         return scale * (normalizedAngle / (Math.PI*2));
     }
     else if (pType === 'supercardioid') {
-        return scale * (0.37 + 0.63 * Math.cos(angle - Math.PI/2));
+        return scale * (0.37 + 0.63 * Math.cos(angle));
     }
     return scale;
 }
@@ -119,6 +119,7 @@ if (slider) {
     drawGraph();
 
 }
+
 
 
 
