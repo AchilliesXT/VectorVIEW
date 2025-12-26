@@ -101,7 +101,11 @@ function calculateR(pType, angle) {
         return scale * Math.abs(Math.cos(angle - Math.PI / 2));
     }
     else if (pType === 'spiral') {
-        return scale * (angle - Math.PI / 2);
+        // Archimedean Spiral: r increases with angle
+        // We normalize angle to be 0 to 2PI for a clean loop
+        let normalizedAngle = (angle + Math.PI/2) % (Math.PI*2);
+        if(normalizedAngle < 0) normalizedAngle += Math.PI*2;
+        return scale * (normalizedAngle / (Math.PI*2));
     }
     
     return scale;
@@ -113,4 +117,5 @@ if (slider) {
     drawGraph();
 
 }
+
 
