@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory | Vector View</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .theory-block { background: white; padding: 40px; border-radius: 20px; margin-bottom: 40px; }
+        .math { font-family: monospace; background: #f4f7f6; padding: 4px 8px; border-radius: 4px; color: #19D3B3; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="brand-name">Vector<span class="text-dark">View</span></span></a></div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="theory.html" class="active">Theory</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 60px; max-width: 800px;">
+        <h1>Polar Pattern Theory</h1>
+        <p class="subtitle">Understanding the mathematics of sensitivity.</p>
+
+        <div class="theory-block">
+            <h2>What is a Polar Plot?</h2>
+            <p>A polar plot is a graph used by engineers to visualize how sensitive a device (like a microphone or antenna) is to signals coming from different angles.</p>
+            <br>
+            <p>The distance from the center ($r$) represents <strong>sensitivity</strong> (gain). The angle ($\theta$) represents the <strong>direction</strong> of the incoming signal.</p>
+        </div>
+
+        <div class="theory-block">
+            <h2>The General Equation</h2>
+            <p>Most standard microphone patterns follow the "Pascal's Limaçon" family of curves:</p>
+            <br>
+            <h3 style="text-align:center; font-size: 1.5rem;">$r = A + B \cos(\theta)$</h3>
+            <br>
+            <ul style="line-height: 1.8;">
+                <li>If $A=1, B=0$: You get a <strong>Circle (Omnidirectional)</strong>.</li>
+                <li>If $A=0.5, B=0.5$: You get a <strong>Heart (Cardioid)</strong>.</li>
+                <li>If $A=0, B=1$: You get a <strong>Figure-8 (Bi-directional)</strong>.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
