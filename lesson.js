@@ -1,4 +1,4 @@
-// CANVAS SETUP
+0.37 + 0.63cos(θ)// CANVAS SETUP
 const canvas = document.getElementById('lessonCanvas');
 const ctx = canvas.getContext('2d');
 const slider = document.getElementById('angleSlider');
@@ -107,7 +107,9 @@ function calculateR(pType, angle) {
         if(normalizedAngle < 0) normalizedAngle += Math.PI*2;
         return scale * (normalizedAngle / (Math.PI*2));
     }
-    
+    else if (pType === 'supercardioid') {
+        return scale * (0.37 + 0.63 * Math.cos(angle - Math.PI/2));
+    }
     return scale;
 }
 
@@ -117,5 +119,6 @@ if (slider) {
     drawGraph();
 
 }
+
 
 
