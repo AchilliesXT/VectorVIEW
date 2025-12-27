@@ -1,56 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenges | Vector View</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Engineering Scenarios | VectorView</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Reuse your existing CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: #f6f8fb;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+
+    /* Scenario cards */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .scenario-card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: 0.25s;
+      border-left: 5px solid transparent;
+    }
+
+    .scenario-card:hover {
+      transform: translateY(-5px);
+      border-left-color: #14b8a6;
+    }
+
+    .scenario-card h3 {
+      margin-bottom: 8px;
+    }
+
+    /* Solver panel */
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    select, button {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button {
+      background: #14b8a6;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #0f766e;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .correct {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .wrong {
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    .explore-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #14b8a6;
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="brand-name">Vector<span class="text-dark">View</span></span></a></div>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="challenges.html" class="active">Challenges</a>
-                <a href="theory.html">Theory</a>
-                <a href="about.html">About</a>
-            </nav>
-        </div>
-    </header>
 
-    <div class="container" style="padding-top: 60px;">
-        <h1>Engineering Challenges</h1>
-        <p class="subtitle">Test your knowledge by solving these real-world audio & signal problems.</p>
+  <!-- NAVBAR (keep your existing one if you already have it) -->
+  <header class="navbar">
+    <div class="logo">VectorView</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="challenges.html">Challenges</a>
+      <a href="theory.html">Theory</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-        <div style="display: grid; gap: 30px; margin-top: 40px;">
-            
-            <div style="background: white; padding: 30px; border-radius: 16px; border: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <h3>1. The Rock Concert Stage</h3>
-                    <p style="color: #666; margin-top: 10px; max-width: 600px;">The lead singer is standing directly in front of a loud drum kit. You need a microphone that picks up the singer but ignores the drums behind them.</p>
-                </div>
-                <a href="cardioid.html" class="btn-primary">Solve with Cardioid &rarr;</a>
-            </div>
+  <main class="container">
 
-            <div style="background: white; padding: 30px; border-radius: 16px; border: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <h3>2. The Podcast Interview</h3>
-                    <p style="color: #666; margin-top: 10px; max-width: 600px;">Two people are sitting face-to-face at a table. You only have one microphone, and you need to capture both voices clearly while ignoring the coffee shop noise on the sides.</p>
-                </div>
-                <a href="figure8.html" class="btn-primary">Solve with Figure-8 &rarr;</a>
-            </div>
+    <!-- HEADER -->
+    <h1>Engineering Scenarios</h1>
+    <p class="subtitle">
+      Apply directional patterns to real-world audio and signal problems.
+      Test, explore, and understand why each solution works.
+    </p>
 
-            <div style="background: white; padding: 30px; border-radius: 16px; border: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <h3>3. The Round Table Meeting</h3>
-                    <p style="color: #666; margin-top: 10px; max-width: 600px;">A conference call with 6 people sitting around a circular table. Everyone needs to be heard equally.</p>
-                </div>
-                <a href="omni.html" class="btn-primary">Solve with Omni &rarr;</a>
-            </div>
+    <!-- SCENARIO SELECTION -->
+    <section class="scenario-grid">
+      <div class="scenario-card" onclick="loadScenario('concert')">
+        <h3>🎸 Rock Concert Stage</h3>
+        <p>Focus on the lead singer while rejecting loud instruments behind.</p>
+      </div>
 
-        </div>
-    </div>
+      <div class="scenario-card" onclick="loadScenario('podcast')">
+        <h3>🎙 Podcast Interview</h3>
+        <p>Capture two voices clearly while rejecting side noise.</p>
+      </div>
+
+      <div class="scenario-card" onclick="loadScenario('meeting')">
+        <h3>🧑‍🤝‍🧑 Round Table Meeting</h3>
+        <p>Record multiple speakers evenly from all directions.</p>
+      </div>
+
+      <div class="scenario-card" onclick="loadScenario('film')">
+        <h3>🎥 Film Set Dialogue</h3>
+        <p>Isolate dialogue while rejecting surrounding ambient noise.</p>
+      </div>
+    </section>
+
+    <!-- SOLVER -->
+    <section id="solver" class="card hidden">
+      <h2 id="scenarioTitle"></h2>
+      <p id="scenarioDesc"></p>
+
+      <label><strong>Select a Directional Pattern</strong></label>
+      <select id="pattern">
+        <option value="">-- Choose Pattern --</option>
+        <option value="omni">Omnidirectional</option>
+        <option value="cardioid">Cardioid</option>
+        <option value="figure8">Figure-8</option>
+        <option value="shotgun">Shotgun (Lobar)</option>
+      </select>
+
+      <button onclick="checkAnswer()">Test Solution</button>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="card hidden"></section>
+
+  </main>
+
+<script>
+  const scenarios = {
+    concert: {
+      title: "🎸 Rock Concert Stage",
+      desc: "The singer stands in front of loud drums. The microphone should focus forward and reject sound from behind.",
+      answer: "cardioid",
+      explain: "Cardioid microphones capture sound from the front while rejecting rear noise, making them ideal for live stages.",
+      link: "cardioid.html"
+    },
+
+    podcast: {
+      title: "🎙 Podcast Interview",
+      desc: "Two people sit face-to-face. One microphone must capture both voices while rejecting side noise.",
+      answer: "figure8",
+      explain: "Figure-8 patterns capture sound from the front and back while rejecting sound from the sides.",
+      link: "figure8.html"
+    },
+
+    meeting: {
+      title: "🧑‍🤝‍🧑 Round Table Meeting",
+      desc: "Multiple speakers sit around a circular table. All voices should be captured equally.",
+      answer: "omni",
+      explain: "Omnidirectional microphones capture sound equally from all directions.",
+      link: "omni.html"
+    },
+
+    film: {
+      title: "🎥 Film Set Dialogue",
+      desc: "A boom microphone records dialogue while rejecting ambient noise from the surroundings.",
+      answer: "shotgun",
+      explain: "Shotgun microphones provide a narrow forward pickup, ideal for film and broadcast audio.",
+      link: "shotgun.html"
+    }
+  };
+
+  let currentScenario = null;
+
+  function loadScenario(key) {
+    currentScenario = scenarios[key];
+
+    document.getElementById("scenarioTitle").textContent = currentScenario.title;
+    document.getElementById("scenarioDesc").textContent = currentScenario.desc;
+
+    document.getElementById("solver").classList.remove("hidden");
+    document.getElementById("result").classList.add("hidden");
+    document.getElementById("pattern").value = "";
+  }
+
+  function checkAnswer() {
+    const choice = document.getElementById("pattern").value;
+    const result = document.getElementById("result");
+
+    if (!choice) return;
+
+    if (choice === currentScenario.answer) {
+      result.innerHTML = `
+        <h3 class="correct">✅ Correct Choice</h3>
+        <p>${currentScenario.explain}</p>
+        <a class="explore-link" href="${currentScenario.link}">
+          Explore this pattern →
+        </a>
+      `;
+    } else {
+      result.innerHTML = `
+        <h3 class="wrong">❌ Not Quite</h3>
+        <p>This pattern does not provide the required directional control for this scenario.</p>
+        <p><strong>Try another pattern and observe the difference.</strong></p>
+      `;
+    }
+
+    result.classList.remove("hidden");
+  }
+</script>
+
 </body>
 </html>
