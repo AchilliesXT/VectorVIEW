@@ -47,7 +47,7 @@ function draw() {
     for (let t = 0; t <= Math.PI * 2; t += 0.05) {
         // Standard Cardioid Equation: r = a(1 - cos(t))
         // We rotate it -90 degrees (Math.PI/2) so the "front" faces up
-        let r = scale * (1 + Math.sin(t));
+        let r = scale * 0.5 * (1 + Math.sin(t));
         
         let x = center + r * Math.cos(t);
         let y = center + r * Math.sin(t);
@@ -95,5 +95,6 @@ function draw() {
 // Start Animation
 
 draw();
+
 
 
