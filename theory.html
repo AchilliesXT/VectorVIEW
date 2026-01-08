@@ -7,14 +7,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .theory-block { background: white; padding: 40px; border-radius: 20px; margin-bottom: 40px; }
-        .math { font-family: monospace; background: #f4f7f6; padding: 4px 8px; border-radius: 4px; color: #19D3B3; }
+        .theory-block {
+            background: #ffffff;
+            border: 1px solid #d1d9e6;
+            box-shadow: 0 12px 30px rgba(15,23,42,.06);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .math {
+            font-family: monospace;
+            background: #e5ecf5;
+            color: #19d3b3;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .eq-centre {
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.5rem;
+            margin: 12px 0;
+        }
     </style>
 </head>
 <body>
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="brand-name">Vector<span class="text-dark">View</span></span></a></div>
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none;">
+                    <span class="brand-name">Vector<span class="text-dark">View</span></span>
+                </a>
+            </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="challenges.html">Challenges</a>
@@ -32,19 +55,17 @@
             <h2>What is a Polar Plot?</h2>
             <p>A polar plot is a graph used by engineers to visualize how sensitive a device (like a microphone or antenna) is to signals coming from different angles.</p>
             <br>
-            <p>The distance from the center ($r$) represents <strong>sensitivity</strong> (gain). The angle ($\theta$) represents the <strong>direction</strong> of the incoming signal.</p>
+            <p>The distance from the centre (<span class="math">r</span>) represents <strong>sensitivity (gain)</strong>. The angle (<span class="math">θ</span>) represents the <strong>direction</strong> of the incoming signal.</p>
         </div>
 
         <div class="theory-block">
             <h2>The General Equation</h2>
-            <p>Most standard microphone patterns follow the "Pascal's Limaçon" family of curves:</p>
-            <br>
-            <h3 style="text-align:center; font-size: 1.5rem;">$r = A + B \cos(\theta)$</h3>
-            <br>
+            <p>Most standard microphone patterns follow the <em>Pascal’s Limaçon</em> family of curves:</p>
+            <div class="eq-centre">r = A + B cos θ</div>
             <ul style="line-height: 1.8;">
-                <li>If $A=1, B=0$: You get a <strong>Circle (Omnidirectional)</strong>.</li>
-                <li>If $A=0.5, B=0.5$: You get a <strong>Heart (Cardioid)</strong>.</li>
-                <li>If $A=0, B=1$: You get a <strong>Figure-8 (Bi-directional)</strong>.</li>
+                <li>If <span class="math">A = 1, B = 0</span> → Circle (Omnidirectional)</li>
+                <li>If <span class="math">A = 0.5, B = 0.5</span> → Heart (Cardioid)</li>
+                <li>If <span class="math">A = 0, B = 1</span> → Figure-8 (Bi-directional)</li>
             </ul>
         </div>
     </div>
